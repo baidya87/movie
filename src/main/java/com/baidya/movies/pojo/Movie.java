@@ -7,56 +7,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
-
+import lombok.*;
 
 
 @Entity
-public class Movie implements Serializable{
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Getter
+@Setter
+public class Movie {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String movieName;
 	private Date releaseDate;
 	private String revenue;
 	private long castId;
-	
-	public long getId() {
-		return id;
-	}	
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getMovieName() {
-		return movieName;
-	}
-	public void setMovieName(String movieName) {
-		this.movieName = movieName;
-	}
-	public Date getReleaseDate() {
-		return releaseDate;
-	}
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
-	}
-	public String getRevenue() {
-		return revenue;
-	}
-	public void setRevenue(String revenue) {
-		this.revenue = revenue;
-	}
-	public long getCastId() {
-		return castId;
-	}
-	public void setCastId(long castId) {
-		this.castId = castId;
-	}
-	
-	
 
 }

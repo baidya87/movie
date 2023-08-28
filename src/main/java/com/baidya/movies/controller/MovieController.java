@@ -36,6 +36,11 @@ public class MovieController {
 	public List<Movie> all() {
 		return movieService.findAll();
 	}
+
+	@GetMapping("/{id}/v2")
+	public MovieCast getMovieV2(@PathVariable("id")long id) {
+		return movieService.getMovieV2(id);
+	}
 	
 }
 
